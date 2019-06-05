@@ -21,7 +21,7 @@ def train(args, sess, model):
         last_ckpt = tf.train.latest_checkpoint(args.checkpoints_path)
         saver.restore(sess, last_ckpt)
         ckpt_name = str(last_ckpt)
-        print "Loaded model file from " + ckpt_name
+        print ("Loaded model file from " + ckpt_name)
         epoch = int(ckpt_name.split('-')[-1])
     else:
         tf.global_variables_initializer().run()
